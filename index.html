@@ -1,7 +1,7 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Gainsight PX Tag-->
+     <!-- Gainsight PX Tag-->
   <script type="text/javascript">
   (function(n,t,a,e,co){var i="aptrinsic";n[i]=n[i]||function(){
       (n[i].q=n[i].q||[]).push(arguments)},n[i].p=e;n[i].c=co;
@@ -30,7 +30,6 @@ aptrinsic("identify",
  });
       
 </script>
-<!-- Gainsight PX Tag-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
@@ -50,13 +49,15 @@ aptrinsic("identify",
             </div>
             <button type="submit">Login</button>
         </form>
+        
+        <h2>Test Accounts</h2>
+        <ul>
+            <li>User ID: testuser1 | Password: password1</li>
+            <li>User ID: testuser2 | Password: password2</li>
+            <li>User ID: testuser3 | Password: password3</li>
+        </ul>
     </div>
 
-    <script>
-        document.getElementById("loginForm").addEventListener("submit", function(event) {
-            event.preventDefault(); // Prevent the default form submission
-            window.location.href = "welcome.html"; // Redirect to welcome page
-        });
-    </script>
+    <script src="script.js"></script> <!-- Link to the external JavaScript file -->
 </body>
 </html>
