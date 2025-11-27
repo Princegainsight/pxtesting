@@ -14,7 +14,7 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+h1, h2 {
     text-align: center;
     color: #333;
 }
@@ -49,4 +49,14 @@ button {
 
 button:hover {
     background-color: #4cae4c;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    color: #555;
+    margin: 5px 0;
 }
