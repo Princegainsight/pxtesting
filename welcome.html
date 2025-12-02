@@ -22,6 +22,15 @@
             Select Payment Status
         </label>
 
+       <div style="position: relative; width: 200px;">
+        <!-- Hidden checkbox to control the dropdown -->
+        <input type="checkbox" id="payment-toggle" style="display: none;" />
+        
+        <!-- Label acts as the dropdown trigger -->
+        <label for="payment-toggle" style="display: block; padding: 10px; background-color: #f7f7f7; cursor: pointer; border: 1px solid #dcdcdc;">
+            Select Payment Status
+        </label>
+
         <!-- Dropdown options that get displayed when the checkbox is checked -->
         <div style="
             display: none;
@@ -41,7 +50,13 @@
                 <label for="option-no">No</label>
             </div>
         </div>
+        
+        <!-- Submit button -->
+        <button type="button" onclick="processPayment()" style="margin-top: 10px; padding: 10px; cursor: pointer;">Submit</button>
     </div>
+
+    <!-- Div to display the message -->
+    <div id="message" style="margin-top: 20px;"></div>
 
     <style>
         /* Display options when checkbox is checked */
