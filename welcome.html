@@ -12,58 +12,59 @@
         <p>You have successfully logged in.</p>
     </div>
 
-      <div style="position: relative; width: 200px;">
+       <h2>Payment Status Selection</h2>
 
-           <div style="position: relative; width: 200px;">
-        <!-- Hidden checkbox to control the dropdown -->
-        <input type="checkbox" id="payment-toggle" style="display: none;" />
-        
-        <!-- Label acts as the dropdown trigger -->
-        <label for="payment-toggle" style="display: block; padding: 10px; background-color: #f7f7f7; cursor: pointer; border: 1px solid #dcdcdc;">
-            Select Payment Status
-        </label>
-
-        <!-- Dropdown options that get displayed when the checkbox is checked -->
-        <div style="
-            display: none;
-            position: absolute;
-            width: 100%;
-            border: 1px solid #dcdcdc;
-            background-color: white;
-            z-index: 1;"
-              id="dropdown-options">
-
-            <div style="padding: 10px; cursor: pointer; border-bottom: 1px solid #dcdcdc;">
-                <input type="radio" id="option-yes" name="payment" value="Yes">
-                <label for="option-yes">Yes</label>
-            </div>
-            <div style="padding: 10px; cursor: pointer;">
-                <input type="radio" id="option-no" name="payment" value="No">
-                <label for="option-no">No</label>
-            </div>
-        </div>
+    <!-- Form for selecting the payment status -->
+    <form action="" method="GET" style="max-width: 200px;">
+        <label for="payment" style="margin-bottom: 10px;">Select Payment Status:</label>
+        <!-- Dropdown list to select payment status -->
+        <select name="payment" id="payment" style="width: 100%; padding: 10px; cursor: pointer; border: 1px solid #dcdcdc;">
+            <option value="">--Select--</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
         
         <!-- Submit button -->
-        <button type="button" onclick="processPayment()" style="margin-top: 10px; padding: 10px; cursor: pointer;">Submit</button>
+        <input type="submit" value="Submit" style="margin-top: 10px; padding: 10px; cursor: pointer;">
+    </form>
+
+    <!-- Static messages based on selection -->
+    <div style="margin-top: 20px;">
+        <div id="thank-you" style="display: none; margin-top: 10px;">Thank you for making the payment!</div>
+        <div id="sorry" style="display: none; margin-top: 10px;">Really sorry for that.</div>
     </div>
 
-    <!-- Div to display the message -->
-    <div id="message" style="margin-top: 20px;"></div>
-
-  <script>
-        function processPayment() {
-            var messageDiv = document.getElementById("message");
-            var paymentYes = document.getElementById("option-yes").checked;
-            var paymentNo = document.getElementById("option-no").checked;
-
-            if (paymentYes) {
-                messageDiv.textContent = "Thank you for making the payment!";
-            } else if (paymentNo) {
-                messageDiv.textContent = "Really sorry for that.";
-            } else {
-                messageDiv.textContent = "Please select a payment status.";
-            }
+    <style>
+        /* Basic styling for messages */
+        #thank-you, #sorry {
+            font-weight: bold;
+            color: green; /* Default color for thank you message */
         }
+
+        #sorry {
+            color: red; /* Different color for sorry message */
+        }
+
+        select {
+            margin-top: 10px;
+        }
+    </style>
+
+    <script>
+        // Just provided to clarify functionality
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Preventing default form submission
+            const selectedValue = document.querySelector("#payment").value;
+
+            // Display appropriate message based on selection
+            if (selectedValue === "Yes") {
+                document.getElementById("thank-you").style.display = "block";
+                document.getElementById("sorry").style.display = "none";
+            } else if (selectedValue === "No") {
+                document.getElementById("sorry").style.display = "block";
+                document.getElementById("thank-you").style.display = "none";
+            }
+        });
     </script>
 
       
