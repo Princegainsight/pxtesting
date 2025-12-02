@@ -90,9 +90,49 @@ aptrinsic("identify",
             // Display appropriate message based on selection
             if (selectedValue === "Yes") {
                 document.getElementById("thank-you").style.display = "block";
+                aptrinsic("identify",
+  {
+  //User Fields
+    "id": "test_User_Prince", // Required for logged in app users
+    "email": "princetesting@address.com",
+    "firstName": "prince",
+    "lastName": "testing",
+    "signUpDate": 1522697426479, //unix time in ms
+    "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
+    "CancellationReasonID" : "Null",
+    "CancellationDate":"Null",  
+    "ChurnDate":"Null",
+    "userHash": "" // optional transient for HMAC identification
+  },
+  {
+  //Account Fields
+    "id":"IBM", //Required
+    "name":"International Business Machine",
+    "Program": "Platinum" // flat custom attributes
+ });
                 document.getElementById("sorry").style.display = "none";
             } else if (selectedValue === "No") {
                 document.getElementById("sorry").style.display = "block";
+                aptrinsic("identify",
+  {
+  //User Fields
+    "id": "test_User_Prince", // Required for logged in app users
+    "email": "princetesting@address.com",
+    "firstName": "prince",
+    "lastName": "testing",
+    "signUpDate": 1522697426479, //unix time in ms
+    "plan" : "gold", //Custom attributes - please create those custom attributes in Aptrinsic via Account Settings to be tracked.
+    "CancellationReasonID" : "1ncken34343",
+    "CancellationDate":"28November",  
+    "ChurnDate":"27November",
+    "userHash": "" // optional transient for HMAC identification
+  },
+  {
+  //Account Fields
+    "id":"IBM", //Required
+    "name":"International Business Machine",
+    "Program": "Platinum" // flat custom attributes
+ });
                 document.getElementById("thank-you").style.display = "none";
             }
         });
